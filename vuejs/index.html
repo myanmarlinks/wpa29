@@ -14,6 +14,8 @@
 				<h1 v-bind:title="message">Hello Testing</h1>
 				<input v-model="message" type="text">
 				<h5 v-if="seen">How are you?</h5>
+				<br />
+				<button class="btn btn-success" v-on:click="changeSeen()">Click Me</button>
 				<h2>{{ test }}</h2>
 				<ol>
 					<li v-for="todo in todos">{{ todo.text }}</li>
@@ -45,12 +47,17 @@
 			data: {
 				message: "Hello from VueJS",
 				test: "Hello from Myanmar Links",
-				seen: false,
+				seen: true,
 				todos: [
 				{ text: "How do you do?"},
 				{ text: "Where do you live?"},
 				{ text: "Howdy?"}
 				]	
+			},
+			methods: {
+				changeSeen: function() {
+					this.seen = false
+				}
 			}
 		})
 
