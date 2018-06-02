@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div id="app" class="row">
+			<div class="col-md-12">
+				<h1>{{ message }}</h1>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/vue.js"></script>
+	<script>
+		var app = new Vue({
+			el: "#app",
+			data: {
+				message: "Hello from VueJS"
+			}
+		})
+	</script>
+</body>
+</html>
