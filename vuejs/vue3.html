@@ -24,6 +24,7 @@
 			props: ["item"],
 			template: "<li>{{ item.text }}</li>"
 		})
+
 		var app = new Vue({
 			el: "#app",
 			data: {
@@ -42,8 +43,24 @@
 			},	
 			beforeMount: function() {
 				console.log("before mounted")
-			}
+			},
+			mounted: function() {
+				console.log("mounted")
+			},
+			beforeUpdate: function() {
+				console.log("before update")
+			},
+			updated: function() {
+				console.log("updated")
+			},
+			beforeDestroy: function() {
+				console.log("before destory")
+			},
+			destroyed: function() {
+				console.log("destroyed!")
+			} 
 		})
+
 	</script>
 </body>
 </html>
