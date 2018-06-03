@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div id="app" class="row">
+			<div class="col-md-12">
+				<h1>{{ message }}</h1>
+				<h3>{{ message }}</h3>
+				<h1 v-bind:title="message">Hello Testing</h1>
+				<input v-model="message" type="text">
+				<h5 v-if="seen">How are you?</h5>
+				<br />
+				<button class="btn btn-success" v-on:click="changeSeen()">Click Me</button>
+				<h2>{{ test }}</h2>
+				<ol>
+					<li v-for="todo in todos">{{ todo.text }}</li>
+				</ol>
+			</div>
+		</div>
+		<div id="app2" class="row">
+			<div class="col-md-12">
+				<p>{{ message }}</p>
+				<button v-on:click="reverseMessage()">Reverse</button>
+			</div>
+		</div>
+	</div>
+	<script src="js/vue.js"></script>
+	<script>
+		var app2 = new Vue({
+			el: "#app2",
+			data: {
+				message: 'Hello Vue.js!'
+			},
+			methods: {
+				reverseMessage: function () {
+					this.message = this.message.split('').reverse().join('')
+				}
+			}
+		})
+		var app = new Vue({
+			el: "#app",
+			data: {
+				message: "Hello from VueJS",
+				test: "Hello from Myanmar Links",
+				seen: true,
+				todos: [
+				{ text: "How do you do?"},
+				{ text: "Where do you live?"},
+				{ text: "Howdy?"}
+				]	
+			},
+			methods: {
+				changeSeen: function() {
+					this.seen = false
+				}
+			}
+		})
+
+		
+	</script>
+</body>
+</html>
