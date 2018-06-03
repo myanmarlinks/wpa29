@@ -7,14 +7,14 @@
 </head>
 <body>
 	<div class="container">
-		<div class="row">
+		<div id="app" class="row">
 			<div class="col-md-12">
-				<form>
-					<div class="form-group">
-						<label for="note">Add Note</label>
-						<input type="text" class="form-control" id="note" placeholder="Fool something">
-					</div>	
-				</form>
+				
+				<div class="form-group">
+					<label for="note">Add Note</label>
+					<input v-model="note" @keyup.enter.prevent="doSomething()" type="text" class="form-control" id="note" placeholder="Fool something">
+				</div>	
+			
 				<hr>
 				<table class="table table-dark">
   					<thead>
@@ -24,14 +24,44 @@
   						</tr>
   					</thead>
   					<tbody>
-  						<tr>
-  							<td>1</td>
-  							<td>Blah Blah Blah</td>
+  						<tr v-for="note in notes">
+  							<td>{{ note.id }}</td>
+  							<td>{{ note.text }}</td>
   						</tr>
   					</tbody>
 			</div> <!-- end of col-md-12 -->
 		</div> <!-- row -->
 	</div> <!-- container -->
 	<script src="js/vue.js"></script>
+
+	<script>
+		var app = new Vue({
+			el: "#app",
+			data: {
+				note: "",
+				notes: [
+					{id: 0, text: "Blah Blah"},
+					{id: 1, text: "Blaw Blaw"},
+					{id: 2, text: "Blawn Blawn"}
+				]
+			},
+			methods: {
+				doSomething: function() {
+					this.notes.push({ id: this.notes.length, text: this.note })
+					this.note = ""
+				}
+			}
+		})
+	</script>
+
+
+
+
+
+
+
+
+
+
 	</body>
 	</html>
