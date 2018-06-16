@@ -1,6 +1,4 @@
 <?php 
-
-
 if(!isset($_GET['page'])) {
 	include "../app/view/home.php";
 } else {
@@ -11,5 +9,4 @@ if(!isset($_GET['page'])) {
 		echo "404";
 	}
 }
-
- ?>
+?>

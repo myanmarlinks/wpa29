@@ -5,6 +5,6 @@
 	<title>Home Page</title>
 </head>
 <body>
-	<h1>Home Page</h1>
+	<h1><?php echo $home ?></h1>
 </body>
 </html>
