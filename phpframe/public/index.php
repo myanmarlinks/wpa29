@@ -1,12 +1,18 @@
 <?php 
+
+define("DD", realpath("../"));
+
+include DD. "/app/controller/controllers.php";
+
 if(!isset($_GET['page'])) {
-	include "../app/view/home.php";
+	HomeController();
 } else {
-	$file = "../app/view/" . $_GET['page'] . ".php";
-	if(file_exists($file)) {
-		include $file;
+	$controller = ucfirst($_GET['page']) . "Controller";
+	if(function_exists($controller)) {
+		call_user_func($controller);
 	} else {
-		echo "404";
+		echo "<h1>404</h1>";
 	}
+	
 }
 ?>
