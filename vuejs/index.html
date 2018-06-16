@@ -21,12 +21,14 @@
   						<tr>
   							<th>ID</th>
   							<th>Note</th>
+  							<th></th>
   						</tr>
   					</thead>
   					<tbody>
   						<tr v-for="note in notes">
   							<td>{{ note.id }}</td>
   							<td>{{ note.text }}</td>
+  							<td><button v-on:click="deleteRecord(note.id)" class="btn-danger">DEL</button></td>
   						</tr>
   					</tbody>
 			</div> <!-- end of col-md-12 -->
@@ -39,29 +41,18 @@
 			el: "#app",
 			data: {
 				note: "",
-				notes: [
-					{id: 0, text: "Blah Blah"},
-					{id: 1, text: "Blaw Blaw"},
-					{id: 2, text: "Blawn Blawn"}
-				]
+				notes: []
 			},
 			methods: {
 				doSomething: function() {
 					this.notes.push({ id: this.notes.length, text: this.note })
 					this.note = ""
+				},
+				deleteRecord: function(id) {
+					this.notes.splice(id, 1)
 				}
 			}
 		})
 	</script>
-
-
-
-
-
-
-
-
-
-
 	</body>
 	</html>
