@@ -1,21 +1,27 @@
 <?php 
 
 function HomeController() {
-	$home = "Myanmar Links";
-	include "../app/view/home.php";
+	$data = [
+		'home'		=> "Myanmar Links",
+		'another'	=> 'Test Another'
+	];
+	_load_view("home", $data);
 }
 
 function BlogController() {
-	include "../app/view/blog.php";	
+	_load_view("blog");
 }
 
 function PageController() {
-	include "../app/view/page.php";		
+	_load_view("page");	
 }
 
 function AboutusController() {
 	$about = "Test";
-	include "../app/view/aboutus.php";	
+	$data = [
+		'about'	=> 'Test'
+	];
+	_load_view("aboutus", $data);
 }
 
 

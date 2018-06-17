@@ -2,7 +2,8 @@
 
 define("DD", realpath("../"));
 
-include DD. "/app/controller/controllers.php";
+require DD . "/wpa29/functions.php";
+require DD. "/app/controller/controllers.php";
 
 if(!isset($_GET['page'])) {
 	HomeController();

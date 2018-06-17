@@ -5,6 +5,7 @@
 	<title>Home Page</title>
 </head>
 <body>
-	<h1><?php echo $home ?></h1>
+	<h1><?php echo $home; ?></h1>
+	<h2><?php echo $another; ?></h2>
 </body>
 </html>
