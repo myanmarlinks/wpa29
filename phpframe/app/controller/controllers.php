@@ -24,5 +24,21 @@ function AboutusController() {
 	_load_view("aboutus", $data);
 }
 
+function TestController() {
+	$data = [
+		"students"	=> [
+			[
+				'id'	=> 1,
+				'name'	=> 'Aung Aung'
+			],
+			[
+				'id'	=> 2,
+				'name'	=> 'Hla Hla'
+			]
+		]
+	];
+	_load_view("test", $data);
+}
+
 
  ?>
