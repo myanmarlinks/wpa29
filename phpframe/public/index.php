@@ -2,8 +2,10 @@
 
 define("DD", realpath("../"));
 
+
 require DD . "/wpa29/functions.php";
-require DD. "/app/controller/controllers.php";
+require DD . "/wpa29/database.php";
+require DD . "/app/controller/controllers.php";
 
 $request_uri = $_SERVER['REQUEST_URI'];
 $script_name = $_SERVER['SCRIPT_NAME'];

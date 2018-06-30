@@ -3,7 +3,8 @@
 function HomeController() {
 	$data = [
 		'home'		=> "Myanmar Links",
-		'another'	=> 'Test Another'
+		'another'	=> 'Test Another',
+		'students'	=> _db_get("students")
 	];
 	_load_view("home", $data);
 }
