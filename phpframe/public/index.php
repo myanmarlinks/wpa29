@@ -2,7 +2,6 @@
 
 define("DD", realpath("../"));
 
-
 require DD . "/wpa29/functions.php";
 require DD . "/wpa29/database.php";
 require DD . "/app/controller/controllers.php";

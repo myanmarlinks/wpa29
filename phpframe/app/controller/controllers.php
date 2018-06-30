@@ -4,16 +4,27 @@ function HomeController() {
 	$data = [
 		'home'		=> "Myanmar Links",
 		'another'	=> 'Test Another',
-		'students'	=> _db_get("students")
+		'students'	=> _db_get_select("students", ['id','name'])
 	];
+
+	var_dump($data['students']);
+	die();
 	_load_view("home", $data);
 }
 
 function BlogController() {
+
+	_db_insert('students', [
+		"name" => 'Goo Goo', 
+		"address" => "Pazuntaung"]);
 	_load_view("blog");
 }
 
 function PageController() {
+	_db_insert('students', [
+		'name' 		=> 'Test Name',
+		'address'	=> "Hlaing"
+	]);
 	_load_view("page");	
 }
 
