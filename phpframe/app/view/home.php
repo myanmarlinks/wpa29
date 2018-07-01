@@ -4,9 +4,10 @@
 	<meta charset="UTF-8">
 	<title><?= $home ?></title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div id="app" class="container">
+	<div id="app" class="container loading">
 		<div class="row">
 			<div class="col-md-12">
 				<table class="table table-striped">
@@ -32,13 +33,22 @@
 	</div>
 
 	<script src="js/jquery.min.js"></script>
-	<script src="js.bootstrap.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<script src="js/vue.js"></script>
 	<script>
 		var app = new Vue({
 			el: "#app",
+			
+			mounted: function() {
+				this.removeClass()
+			},
 			data: {
 				students: <?= $students ?>
+			},
+			methods: {
+				removeClass: function() {
+					$("#app").removeClass("loading")
+				}
 			}
 
 		});

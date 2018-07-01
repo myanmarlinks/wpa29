@@ -1,3 +1,5 @@
-h1 {
-	font-size: 24px;
+.loading {
+	height: 500px;
+	background: url(../img/loading.gif) no-repeat center center;
+
 }
