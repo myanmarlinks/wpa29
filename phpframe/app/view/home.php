@@ -10,6 +10,8 @@
 	<div id="app" class="container loading">
 		<div class="row">
 			<div class="col-md-12">
+				<a class="btn btn-success" href="http://localhost:8000/createstudent">Create Student</a>
+				<hr>
 				<table class="table table-striped">
 					<thead>
 						<tr>

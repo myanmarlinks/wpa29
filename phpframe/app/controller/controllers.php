@@ -7,7 +7,7 @@ function HomeController() {
 	$data = [
 		'home'		=> "Myanmar Links",
 		'another'	=> 'Test Another',
-		'students'	=> $mystudents // json_encode(_db_get("students"))
+		'students'	=>  json_encode(_db_get("students"))
 	];
 
 	_load_view("home", $data);
@@ -51,6 +51,19 @@ function TestController() {
 		]
 	];
 	_load_view("test", $data);
+}
+
+function CreatestudentController() {
+	if($_SERVER["REQUEST_METHOD"] == "POST") {
+		$student = [
+			"name"		=> $_POST['name'],
+			"address"	=> $_POST['address']
+		];
+		_db_insert("students", $student);
+		_redirect("/");
+		
+	}
+	_load_view("create_student");
 }
 
 

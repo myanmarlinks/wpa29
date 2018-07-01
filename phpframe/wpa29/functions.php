@@ -29,4 +29,16 @@ function _load_view($view, $data = null) {
 	}
 }
 
+function _redirect($link) {
+	if($link == "/") {
+		header("Location: " . _config_get("app.site_url"));
+		die();
+	} else {
+		$e_link = explode("/", $link);
+		header("Location: ". _config_get("app.site_url") . '/' . $e_link[1]);
+		die();
+	}
+
+}
+
  ?>
