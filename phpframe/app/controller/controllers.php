@@ -7,7 +7,7 @@ function HomeController() {
 	$data = [
 		'home'		=> "Myanmar Links",
 		'another'	=> 'Test Another',
-		'students'	=> $mystudents
+		'students'	=> $mystudents // json_encode(_db_get("students"))
 	];
 
 	_load_view("home", $data);
