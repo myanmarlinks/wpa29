@@ -4,7 +4,7 @@
 return [
 	'hostname'	=> 'localhost',
 	'username'	=> 'root',
-	'password'	=> '123456',
+	'password'	=> '1234',
 	'dbname'	=> 'wpa29'
 ];
 

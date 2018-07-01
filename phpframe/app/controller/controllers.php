@@ -4,11 +4,10 @@ function HomeController() {
 	$data = [
 		'home'		=> "Myanmar Links",
 		'another'	=> 'Test Another',
-		'students'	=> _db_get_select("students", ['id','name'])
+		'students'	=> json_encode(_db_get("students"))
 	];
 
-	var_dump($data['students']);
-	die();
+
 	_load_view("home", $data);
 }
 
