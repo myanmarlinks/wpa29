@@ -2,45 +2,54 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Hello Object Orienteds</title>
+	<title>Document</title>
 </head>
 <body>
 	<?php 
-		class Dog {
-			public $name, $color;
 
-			public function __construct($name, $color = "Black") {
-				$this->name = $name;
-				$this->color = $color;
-			}
-			function eat() {
-				echo "Dog is eating!";
+
+		abstract class Animal {
+			public $name;
+			public function eat() {
+				echo "Eat" . "<br>";
 			}
 		}
-		$dog = new Dog("Aung Net");
-		echo $dog->name . "<br>";
-		echo $dog->color. "<br>"; 
-		$dog->legs = 4;
+		trait Special {
+			public $foo;
+			public function dance() {
+				echo "Dance!" . "<br>";
+			}
+		}
+		trait SuperSpecial {
+			public function fool() {
+				echo "Dog is fool!" . "<br>";
+			}
+		}
+		class Dog extends Animal {
+			use Special, SuperSpecial;
+			public function bark() {
+				echo "Woof!" . "<br>";	
+			}
+		}
+		class Cat extends Animal {
+			use Special;
+			public function meow() {
+				echo "Meow!" . "<br>";	
+			}
+		}
+		$dog = new Dog();
+		$dog->name = "Aung Aung";
+		$cat = new Cat();
+		$cat->name = "Foo";
+		$dog->dance();
+		echo $dog->foo;
 		$dog->eat();
+		$dog->fool();
+		$cat->eat();
 	 ?>
-	 <script>
-	 	// ES6
-	 	class Dog {
-	 		constructor(name, color = "Black") {
-	 			this.name = name;
-	 			this.color = color;
-	 		}
-	 		eat() {
-	 			console.log("Dog is eating!");
-	 		}
-	 	}
 
-	 	var dog = new Dog("Aung Net");
-	 	dog.legs = 4;
-	 	console.log(dog.name);
-	 	console.log(dog.color);
-	 	console.log(dog.legs);
-	 	dog.eat();
-	 </script>
+	<script>
+		
+	</script>
 </body>
 </html>
