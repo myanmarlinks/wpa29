@@ -10,6 +10,9 @@
 
 		abstract class Animal {
 			public $name;
+			public function __construct($name) {
+				$this->name = $name;
+			} 
 			public function eat() {
 				echo "Eat" . "<br>";
 			}
@@ -27,6 +30,10 @@
 		}
 		class Dog extends Animal {
 			use Special, SuperSpecial;
+
+			public function __construct() {
+				parent::__construct("Bo Bo");
+			}
 			public function bark() {
 				echo "Woof!" . "<br>";	
 			}
