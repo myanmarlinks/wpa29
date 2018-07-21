@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VueJS Router</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div id="app" class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<router-link to="/foo">Go to Foo</router-link>
+				<router-link to="/bar">Go to Bar</router-link>
+				<br>
+				<router-view></router-view>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/vue.js"></script>
+	<script src="js/vue-router.js"></script>
+	<script>
+		const Foo = { template: '<div>foo</div>' }
+		const Bar = { template: '<div>bar</div>' }
+
+		const routes = [
+			{ path: '/foo', component: Foo },
+			{ path: '/bar', component: Bar }
+		]
+
+		const router = new VueRouter({
+			routes
+		})
+
+		const app = new Vue({
+			router
+		}).$mount('#app')
+	</script>
+</body>
+</html>
