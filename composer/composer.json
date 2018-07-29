@@ -1,0 +1,14 @@
+{
+    "require": {
+        "monolog/monolog": "^1.23",
+        "illuminate/database": "^5.6"
+    },
+    "autoload": {
+    	"classmap": [
+    		"wpa29/providers"
+    	],
+    	"files": [
+    	"wpa29/functions.php"
+   		]	
+    }
+}
